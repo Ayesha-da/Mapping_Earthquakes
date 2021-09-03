@@ -147,9 +147,6 @@ layer.on({
 });
 
 }
-
-
-
     
   }).addTo(earthquakes);
 
