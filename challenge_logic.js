@@ -1,6 +1,6 @@
 // Add console.log to check to see if our code is working.
 var express = require('express');
-require('dotenv').config();
+// require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
