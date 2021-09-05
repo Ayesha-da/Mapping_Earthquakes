@@ -1,5 +1,14 @@
 // Add console.log to check to see if our code is working.
 console.log("working");
+const express = require('express');
+require('dotenv').config();
+const app = express();
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Starting server at ${port}`);
+});
+app.use(express.static('index.html'));
+app.use(express.json({ limit: '1mb' }));
 
 // We create the tile layer that will be the background of our map.
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
