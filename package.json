@@ -2,7 +2,7 @@
     "name": "module3",
     "version": "1.0.0",
     "description": "This is a version of 'weather here' app by Joey Lee.",
-    "main": "challenge_logic.js",
+    "main": "index.html",
     "scripts": {
       "start": "node challenge_logic.js",
       "test": "echo \"Error: no test specified\" && exit 1"
