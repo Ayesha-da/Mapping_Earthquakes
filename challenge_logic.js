@@ -1,13 +1,14 @@
 // Add console.log to check to see if our code is working.
 var express = require('express');
-var timeout = require('connect-timeout')
-var bodyParser = require('body-parser')
-var cookieParser = require('cookie-parser')
+require('dotenv').config();
+
 var app = express();
-app.use(timeout('5s'));
-app.use(bodyParser());
-app.use(haltOnTimedout);
-app.use(cookieParser());
+
+const app = express();
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Starting server at ${port}`);
+});
 
 
 
@@ -15,22 +16,8 @@ app.use(express.static('index.html'));
 app.use(express.json({ limit: '1mb' }));
 
 
-app.get('/json', function(req, res) {
-    console.log("GET the json");
-    res
-        .status(200)
-        .json( {"jsonData" : true} );
-});
 
-function haltOnTimedout (req, res, next) {
-  if (!req.timedout) next()
-}
-
-
-  const server = app.listen(process.env.PORT || 5000, () => {
-  const port = server.address().port;
-  console.log(`Express is working on port ${port}`);
-});
+  
 // We create the tile layer that will be the background of our map.
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
