@@ -1,6 +1,14 @@
 // Add console.log to check to see if our code is working.
 var express = require('express');
+var timeout = require('connect-timeout')
+var bodyParser = require('body-parser')
+var cookieParser = require('cookie-parser')
 var app = express();
+app.use(timeout('5s'));
+app.use(bodyParser());
+app.use(haltOnTimedout);
+app.use(cookieParser());
+app.use(haltOnTimedout);
 
 
 
@@ -15,7 +23,9 @@ app.get('/json', function(req, res) {
         .json( {"jsonData" : true} );
 });
 
-
+function haltOnTimedout (req, res, next) {
+  if (!req.timedout) next()
+}
 
 
   const server = app.listen(process.env.PORT || 5000, () => {
