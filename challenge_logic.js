@@ -11,7 +11,6 @@ app.listen(port, () => {
 
 
 app.use(express.static('index.html'));
-app.use(express.json({ limit: '1mb' }));
 
 
 
