@@ -12,3 +12,5 @@
 ### Major Earthquakes
 ![major-earthquakes](https://user-images.githubusercontent.com/84524153/132134656-521a2604-b688-4d66-8294-543bc2c08971.png)
 
+#### website under construction
+https://earthquake-update.herokuapp.com/
