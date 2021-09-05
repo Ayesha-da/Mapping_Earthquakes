@@ -8,7 +8,6 @@ app.use(timeout('5s'));
 app.use(bodyParser());
 app.use(haltOnTimedout);
 app.use(cookieParser());
-app.use(haltOnTimedout);
 
 
 
