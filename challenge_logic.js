@@ -119,7 +119,7 @@ layer.on({
   },
   // When a feature (neighborhood) is clicked, it is enlarged to fit the screen
   click: function(event) {
-    myMap.fitBounds(event.target.getBounds());
+    map.fitBounds(event.target.getBounds());
   }
 });
 
@@ -206,7 +206,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geoj
     },
     // When a feature (neighborhood) is clicked, it is enlarged to fit the screen
     click: function(event) {
-      myMap.fitBounds(event.target.getBounds());
+      map.fitBounds(event.target.getBounds());
     }
   });
 
